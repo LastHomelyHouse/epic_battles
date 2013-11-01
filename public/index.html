@@ -5,12 +5,21 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.min.css"></link>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript"> 
+      $(document).ready(function() {
+        $("#battleForm").submit(function(event) {
+
+          event.preventDefault();
+        });
+
+      });
+    </script> 
   </head>
   
   <body>
     <div class="container">
       <h1>Epic Battles!</h1>
-      <form class="form-inline" role="form" action="/battles" method="post">
+      <form id="battleForm" class="form-inline" role="form" action="/battles" method="post">
         <div class="form-group">
           <label class="sr-only" for="combatant1">Combatant 1</label>
           <input type="text" class="formcontrol" id="combatant1" name="combatant1" placeholder="Godzilla" />
