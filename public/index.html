@@ -8,10 +8,25 @@
     <script type="text/javascript"> 
       $(document).ready(function() {
         $("#battleForm").submit(function(event) {
-
+          var $form = $(this); 
+          console.log("form contents: "+ $form.serialize());
+          $.ajax({
+            type: "POST",
+            url: "/battles",
+            data: $form.serialize(),
+            success: function(responseData){
+              console.log("response: "+ responseData);
+            },
+            error: function(err){
+              console.log(err);
+            },
+            dataType: "text"
+          });
           event.preventDefault();
         });
-
+        function successCallback(responseData) {
+          console.log("response: "+ responseData);
+        };
       });
     </script> 
   </head>
