@@ -14,19 +14,23 @@
             type: "POST",
             url: "/battles",
             data: $form.serialize(),
-            success: function(responseData){
-              console.log("response: "+ responseData);
-            },
-            error: function(err){
-              console.log(err);
-            },
+            success: successCallback,
+            error: errorCallback,
             dataType: "text"
           });
           event.preventDefault();
         });
         function successCallback(responseData) {
-          console.log("response: "+ responseData);
+          $("#battle-result").text(responseData); 
         };
+        function errorCallback(error) {
+          $("#battle-result").text("Sorry, there was an error.");
+        };
+        $("#add-another").click(function(event) {
+          $(this).hide();
+          $(".combatant3").show();
+          event.preventDefault();
+        })
       });
     </script> 
   </head>
@@ -34,18 +38,25 @@
   <body>
     <div class="container">
       <h1>Epic Battles!</h1>
-      <form id="battleForm" class="form-inline" role="form" action="/battles" method="post">
+      <form id="battleForm" class="form" role="form" action="/battles" method="post">
         <div class="form-group">
           <label class="sr-only" for="combatant1">Combatant 1</label>
           <input type="text" class="formcontrol" id="combatant1" name="combatant1" placeholder="Godzilla" />
           VS
           <label class="sr-only" for="combatant2">Combatant 2</label>
           <input type="text" class="formcontrol" id="combatant2" name="combatant2" placeholder="Chuck Norris" />
+          <span class="combatant3" style="display:none;">
+            VS
+            <label class="sr-only" for="combatant3">Combatant 3</label>
+            <input type="text" class="formcontrol" id="combatant3" name="combatant3" placeholder="Jackie Chan" />
+          </span>
+          <a href="#" id="add-another">Add another combatant?</a>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-danger">WHO WILL WIN?</button>
         </div>
       </form>
+      <span id="battle-result"></span>
     </div>
   </body>
 </html>
