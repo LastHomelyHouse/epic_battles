@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.min.css"></link>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
     <script type="text/javascript"> 
       $(document).ready(function() {
         $("#battleForm").submit(function(event) {
@@ -30,6 +31,12 @@
           postResult('There was a problem, so the battle has been postponed.');
         };
       });
+=======
+    <script type="text/javascript" src="/js/coffee-script-compiler.js"></script>
+    <script type="text/javascript" src="/js/epic-battles.js"></script>
+    <script type="text/coffeescript">
+    console.log "coffeescript is working"
+>>>>>>> a39268cd3807c6509136f576328dcc697397ee8b
     </script> 
   </head>
   
@@ -43,20 +50,33 @@
           VS
           <label class="sr-only" for="combatant2">Combatant 2</label>
           <input type="text" class="formcontrol" id="combatant2" name="combatant2" placeholder="Chuck Norris" />
+<<<<<<< HEAD
           <a id="add-a-combatant">add a combatant</a>
           <div style="visibility: hidden"> 
             VS
             <label class="sr-only" for="combatant3">Combatant 3</label>
             <input type="text" class="formcontrol" id="combatant3" name="combatant3" placeholder="Aquaman" />
           </div>
+=======
+          <span class="combatant3" style="display:none;">
+            VS
+            <label class="sr-only" for="combatant3">Combatant 3</label>
+            <input type="text" class="formcontrol" id="combatant3" name="combatant3" placeholder="Jackie Chan" />
+          </span>
+          <a href="#" id="add-another">Add another combatant?</a>
+>>>>>>> a39268cd3807c6509136f576328dcc697397ee8b
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-danger">WHO WILL WIN?</button>
         </div>
       </form>
+<<<<<<< HEAD
       <div class="lead">
         <span id="battle-result"></span>
       </div>
+=======
+      <span id="battle-result"></span>
+>>>>>>> a39268cd3807c6509136f576328dcc697397ee8b
     </div>
   </body>
 </html>

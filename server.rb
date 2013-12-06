@@ -9,6 +9,9 @@ end
 post '/battles' do
   combatant1 = params[:combatant1]
   combatant2 = params[:combatant2]
-  winner = [combatant1, combatant2][rand(2)]
+  combatant3 = params[:combatant3]
+  combatants= [combatant1, combatant2]
+  combatants << combatant3 unless combatant3.nil?
+  winner = combatants[rand(combatants.size)]
   return "A close battle! #{winner} is triumphant!"
 end
