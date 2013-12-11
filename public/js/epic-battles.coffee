@@ -1,5 +1,4 @@
-EpicBattles = {
-
+EpicBattles =
   run: ->
     $(document).ready ->
       $("#battleForm").submit (event) ->
@@ -27,7 +26,5 @@ EpicBattles = {
 
   errorCallback: (error) ->
     $("#battle-result").text "Sorry, there was an error."
-  
-}
 
 EpicBattles.run()
