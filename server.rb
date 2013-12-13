@@ -1,4 +1,5 @@
 require "sinatra"
+#require "pry"
 
 set :public_folder, './public'
 
@@ -11,7 +12,7 @@ post '/battles' do
   combatant2 = params[:combatant2]
   combatant3 = params[:combatant3]
   combatants= [combatant1, combatant2]
-  combatants << combatant3 unless combatant3.nil?
+  combatants << combatant3 unless combatant3.nil? || combatant3.empty?
   winner = combatants[rand(combatants.size)]
   return "A close battle! #{winner} is triumphant!"
 end
