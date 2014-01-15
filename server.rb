@@ -14,5 +14,5 @@ post '/battles' do
   combatants= [combatant1, combatant2]
   combatants << combatant3 unless combatant3.nil? || combatant3.empty?
   winner = combatants[rand(combatants.size)]
-  return "A close battle! #{winner} is triumphant!"
+  return "A close battle! #{winner.capitalize} is triumphant!"
 end
